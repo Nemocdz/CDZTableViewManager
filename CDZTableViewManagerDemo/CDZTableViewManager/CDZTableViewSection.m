@@ -28,7 +28,7 @@
     if (!cellClass) {
         return;
     }
-    NSString *itemHash = [NSString stringWithFormat:@"%lu",item.hash];
+    NSString *itemHash = [NSString stringWithFormat:@"%tu",item.hash];
     [self.sectionCellDic setObject:cellClass forKey:itemHash];
 }
 
@@ -44,7 +44,7 @@
 }
 
 - (Class)cellClassForItem:(id<NSObject>)item{
-    NSString *itemHash = [NSString stringWithFormat:@"%lu",item.hash];
+    NSString *itemHash = [NSString stringWithFormat:@"%tu",item.hash];
     Class cellClass = [self.sectionCellDic objectForKey:itemHash];
     return cellClass;
 }
