@@ -30,15 +30,10 @@
 - (NSMutableArray <CDZTableViewSection *>*)sections{
     NSMutableArray <CDZTableViewSection *> *sections = [NSMutableArray array];
     CDZTableViewSection *firstSection = [[CDZTableViewSection alloc]init];
-    
-
-    
     NSString *itemA = @"itemA";
     [firstSection addItem:itemA cellClass:[TestACell class]];
-    
     NSDictionary *itemB = @{@"title" : @"itemB"};
     [firstSection addItem:itemB cellClass:[TestACell class]];
-    
     
     TestItem *itemC = [[TestItem alloc]init];
     itemC.title = @"itemC";
@@ -46,17 +41,12 @@
         NSLog(@"%@ tap",item.title);
     };
     [firstSection addItem:itemC cellClass:[TestBCell class]];
-
-    
     TestItem *itemD = [[TestItem alloc]init];
     itemD.title = @"itemD";
     itemD.tapBlock = ^(TestItem *item) {
         NSLog(@"%@ tap",item.title);
     };
     [firstSection addItem:itemD cellClass:[TestBCell class]];
-
-    
-    
     [sections addObject:firstSection];
     return sections;
 }
