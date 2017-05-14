@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CDZTableViewManager"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "A manager of tableview"
   s.homepage     = "https://github.com/Nemocdz/CDZTableViewManager"
   s.license      = "MIT"
