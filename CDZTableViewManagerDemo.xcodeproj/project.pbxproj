@@ -55,6 +55,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA13E6761EC897D400FDB53E /* TestCell */ = {
+			isa = PBXGroup;
+			children = (
+				DAEE25931EC8455600B149C0 /* TestACell.h */,
+				DAEE25941EC8455600B149C0 /* TestACell.m */,
+				DAEE25991EC84E4F00B149C0 /* TestBCell.h */,
+				DAEE259A1EC84E4F00B149C0 /* TestBCell.m */,
+			);
+			name = TestCell;
+			sourceTree = "<group>";
+		};
+		DA13E6771EC897E100FDB53E /* TestModel */ = {
+			isa = PBXGroup;
+			children = (
+				DAEE25961EC84B5400B149C0 /* TestItem.h */,
+				DAEE25971EC84B5400B149C0 /* TestItem.m */,
+			);
+			name = TestModel;
+			sourceTree = "<group>";
+		};
 		DA8F80EA1EC781C100CB970E = {
 			isa = PBXGroup;
 			children = (
@@ -74,17 +94,13 @@
 		DA8F80F51EC781C100CB970E /* CDZTableViewManagerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DA13E6771EC897E100FDB53E /* TestModel */,
+				DA13E6761EC897D400FDB53E /* TestCell */,
 				DA8F81141EC7820A00CB970E /* CDZTableViewManager */,
 				DA8F80F91EC781C100CB970E /* AppDelegate.h */,
 				DA8F80FA1EC781C100CB970E /* AppDelegate.m */,
-				DAEE25931EC8455600B149C0 /* TestACell.h */,
-				DAEE25941EC8455600B149C0 /* TestACell.m */,
-				DAEE25991EC84E4F00B149C0 /* TestBCell.h */,
-				DAEE259A1EC84E4F00B149C0 /* TestBCell.m */,
 				DA8F80FC1EC781C100CB970E /* ViewController.h */,
 				DA8F80FD1EC781C100CB970E /* ViewController.m */,
-				DAEE25961EC84B5400B149C0 /* TestItem.h */,
-				DAEE25971EC84B5400B149C0 /* TestItem.m */,
 				DA8F80FF1EC781C100CB970E /* Main.storyboard */,
 				DA8F81021EC781C100CB970E /* Assets.xcassets */,
 				DA8F81041EC781C100CB970E /* LaunchScreen.storyboard */,
