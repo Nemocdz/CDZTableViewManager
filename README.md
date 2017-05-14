@@ -1,32 +1,37 @@
-//
-//  ViewController.m
-//  CDZTableViewManagerDemo
-//
-//  Created by Nemocdz on 2017/5/14.
-//  Copyright © 2017年 Nemocdz. All rights reserved.
-//
+# CDZTableViewManager
+This is manager for tableView with static tableview cell.
 
-#import "ViewController.h"
+## Installation
+
+### Manual
+
+Add "CDZTableViewManager" files to your project
+
+### CocoaPods
+
+Add ``pod 'CDZTableViewManager'`` in your Podfile
+
+## Usage
+
+```objective-c
 #import "CDZTableViewSection.h"
 #import "CDZTableViewManager.h"
-#import "TestACell.h"
-#import "TestBCell.h"
-#import "TestItem.h"
+```
 
-@interface ViewController ()<CDZTableViewManagerDelegate>
-@property (nonatomic ,strong) UITableView *tableView;
-@property (nonatomic ,strong) CDZTableViewManager *tableViewManager;
-@end
+First,Init  the manager. 
 
-@implementation ViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.tableViewManager.sections = [self sections];
-    [self.view addSubview:self.tableView];
+```objective-c
+- (CDZTableViewManager *)tableViewManager{
+    if (!_tableViewManager) {
+        _tableViewManager = [[CDZTableViewManager alloc]initWithTableView:self.tableView delegate:self];
+    }
+    return _tableViewManager;
 }
+```
 
+And Than,config and add sections.
 
+```objective-c
 - (NSMutableArray <CDZTableViewSection *>*)sections{
     NSMutableArray <CDZTableViewSection *> *sections = [NSMutableArray array];
     CDZTableViewSection *firstSection = [[CDZTableViewSection alloc]init];
@@ -54,7 +59,13 @@
     [sections addObject:firstSection];
     return sections;
 }
+```
 
+``self.tableViewManager.sections = [self sections];``
+
+If you want, do something at delegate.
+
+```objective-c
 #pragma mark - CDZTableViewManagerDelegate
 - (void)tableView:(UITableView *)tableView didSelectItem:(id)item atIndexPath:(NSIndexPath *)indexPath{
     if ([item isMemberOfClass:[TestItem class]]) {
@@ -75,19 +86,25 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)sectionIndex{
     return 100;
 }
+```
 
-- (UITableView *)tableView{
-    if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    }
-    return _tableView;
-}
+## Articles
 
-- (CDZTableViewManager *)tableViewManager{
-    if (!_tableViewManager) {
-        _tableViewManager = [[CDZTableViewManager alloc]initWithTableView:self.tableView delegate:self];
-    }
-    return _tableViewManager;
-}
+[iOS中通用的TableView和CollectionView DataSource和Cell](http://www.jianshu.com/p/1f7304634600)
 
-@end
+[iOS打造一个静态Cell通用的TableViewManager](http://www.jianshu.com/p/eef40354104c)
+
+## Requirements
+
+iOS 8.0 Above
+
+## Contact
+
+- Open a issue
+- QQ：757765420
+- Email：nemocdz@gmail.com
+- Weibo：[@Nemocdz](http://weibo.com/nemocdz)
+
+## License
+
+CDZTableViewManager is available under the MIT license. See the LICENSE file for more info.
